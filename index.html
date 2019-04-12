@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hugo testform!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Load Leaflet CSS -->
+    <link href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" rel="stylesheet">
+    
+    <!-- Load our styles -->
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>
+    
+    Citi Bike Stations, Subway Stations and Bike Lanes in NYC</h1>
+       
+        <p>
+          Click the map to add a proposed Citi Bike location and extract information that interacts with the underlying census data and surrounding tranportation infrastructure
+        </p>
+        
+    <div class="map-wrapper">
+    <div id="map"></div>
+      
+      <div class="sidebar">
+        <h2>
+          Click to see how many Citi Bike stations are within 2,500 feet of the point you clicked.
+        </h2>
+        
+        <!-- We create a div where the count data will go when clicked on: -->
+        <div class="sidebar-feature-content1"></div>
+        
+      
+      <h2>
+          Click again to see out how many train stations are within 2,500 feet of the point you clicked.
+        </h2>
+        
+        <div class="sidebar-feature-content2"></div>
+        
+        <h2>
+          Click once more to see the median household income within 2,500 feet of the point you clicked.
+        </h2>
+        
+        <!-- We create a div where the count data will go when clicked on: -->
+        <div class="sidebar-feature-content3"></div>
+        
+        <script type="text/javascript">var submitted=false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='https://hugoformcitibike.glitch.me/';}"></iframe>
+        
+        <script>console.log(submitted);</script>
+        
+        <br>
+        <br>
+        <form action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSeqzac3TvPp1-IKIeoN-nEsB9Lyy2A0nnHdlL2LLFHNIcVjbQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      
+          <div>
+        <label for="your-name">Your Name</label>
+        <input id="your-name" type="text" name="entry.1446189163" />
+      </div>
+           <br>
+          <br>
+      <div>
+        <label for="your-say">Zipcode</label>
+        <input id="your-say" name="entry.1980751783"/>
+      </div>
+          <br>
+      
+           <input class="longitude-field" id="longitude" type="hidden" name="entry.724633611" />
+      <input class="latitude-field" id="latitude" type="hidden" name="entry.667894503" />
+          <br>
+       
+        <input type="submit" value="Submit" />
+    </form> 
+        
+      </div>
+        
+
+      <div>
+            
+      <select class="layer-picker">
+        <option value="all">Bike Lanes All Boroughs</option>
+        <option value="1">Manhattan</option>
+        <option value="3">Brooklyn</option>
+        <option value="4">Queens</option>
+      </select>
+      </div>
+      
+    <!-- Load Leaflet and Carto libraries -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://libs.cartocdn.com/carto.js/v4.1.11/carto.min.js"></script>
+    
+    <!-- Load our JavaScript -->
+    <script src="./script.js"></script> 
+    
+      
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </div>
+      </body>
+</html>
